@@ -7,8 +7,25 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
+<script>
+    var tablink = document.getElementsByClassName("tab-link");
+    var tabcontent = document.getElementsByClassName("tab-content");
+    
+    function opentab(tabname){
+        for(tab_link of tablink){
+            tab_link.classList.remove("active-link");
+        }
+        for(tab_content of tabcontent){
+            tab_content.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
 <body>
+
     <!-- Header -->
+
     <header id="home">
         <div class="container">
             <nav>
@@ -29,7 +46,9 @@
             </div>
         </div>
     </header>
+
     <!-- About -->
+
     <section id="about">
         <div class="container">
             <div class="row">
@@ -39,9 +58,41 @@
                 <div class="about-col-2">
                     <h1 class="title">About Me</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, incidunt tempora sequi inventore officiis ullam, dolores, eos optio animi totam quaerat non dolore est nobis odio exercitationem possimus ex quam!</p>
+
+                    <div class="tab-title">
+                        <div class="tab-link active-link" onclick="opentab('skills')">Skills</div>
+                        <div class="tab-link" onclick="opentab('experience')">Experience</div>
+                        <div class="tab-link" onclick="opentab('education')">Education</div>
+                    </div>
+                    <div class="tab-content active-tab" id="skills">
+                        <ul>
+                            <li><span>IT Support</span><br>- Hardware and software troubleshooting. <br>- Basic knowledge of operating systems (Windows, Linux, etc.). <br>- Use of common software and applications, such as Microsoft Office Suite.</li>
+                            <li><span>Networking</span><br>- Basic understanding of computer networks, including LAN, Fiber Optic, TCP/IP protocols, DNS, DHCP.</li>
+                            <li><span>Graphic Designer</span> (especially 2D Illustrator)<br>- Basic understanding of computer networks, including LAN, Fiber Optic, TCP/IP protocols, DNS, DHCP.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="experience">
+                        <ul>
+                            <li><span>PKL</span> (Praktik Kerja Lapangan)<br><i><strong>IT Support</strong>,</i> <strong>PT.NALE SYSTEM INTEGRATOR (Dec 2021 – Jan 2023)</strong><br>- Provide technical support to users in troubleshooting hardware problems and soft.<br>- Manage computer networks and ensure their availability and security.
+                            <br>- Handles installation, configuration, and maintenance of operating systems and applications.
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <ul>
+                            <li><span>SMK <i>Teknik Komputer dan Jaringan</i>, </span><br><strong>SMKN 1 KEPANJEN (Jul 2020 – May 2023)</strong></li>
+                            <li><span>D-IV <i>Teknik Informatika</i>, </span><br><strong>POLITEKNIK NEGERI MALANG (Jul 2023 – Now)</strong></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Services -->
+
+    <section id="Services">
+        
     </section>
 </body>
 </html>
