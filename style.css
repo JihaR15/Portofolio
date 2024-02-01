@@ -17,16 +17,17 @@ html{
 body{
     background: #111111;
     color: #fff;
-}
-
-header{
-    width: 100%;
-    height: 100vh;
+    background-attachment: fixed;
     background-image: url(img/ryoyamada2.png);
     background-size: 100vmin;
     background-position: right bottom;
     background-repeat: no-repeat;
     background-position-x: 90%;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
     /* background-image: url(img/bocchibg.png);
     background-size: cover;
     background-position: center; */
@@ -34,16 +35,18 @@ header{
 
 nav{
     margin: 10px;
+    
     padding: 20px;
     border-radius: 20px;
     width: 80%;
-    height: 8%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
     background-color: #222222 ;
     background: rgba(34, 34, 34, .8);
+    z-index: 2!important;
 }
 
 .container{
@@ -51,6 +54,7 @@ nav{
 }
 
 .logo{
+    margin-top: 5px;
     width: 30px;
     transition: .3s;
 }
@@ -112,12 +116,9 @@ nav ul li a:hover::after{
 }
 
 .row{
-    display: flex;
-    justify-content: space-between;
-}
-
-.about-col-1{
-    flex-basis: 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .about-col-1 img{
@@ -125,9 +126,6 @@ nav ul li a:hover::after{
     border-radius: 20px;
 }
 
-.about-col-2{
-    flex-basis: 45%;
-}
 
 .title{
     font-size: 50px;
@@ -141,7 +139,7 @@ nav ul li a:hover::after{
 
 .tab-link{
     margin-right: 50px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     cursor: pointer;
     position: relative;
@@ -184,6 +182,9 @@ nav ul li a:hover::after{
 
 #services{
     padding: 30px 0;
+    background: rgba(34, 34, 34, 0.661);
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 4px );
 }
 
 .service-list{
@@ -224,3 +225,84 @@ nav ul li a:hover::after{
     transform: translateY(-10px);
 }
 
+/* Portfolio */
+
+#portfolio{
+    padding: 50px 0;
+    background: #222222;
+
+}
+
+/* Responsive */
+nav .menu{
+    display: none;
+}
+
+@media only screen and (max-width: 780px){
+    
+    nav .menu{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    nav ul{
+        background: rgba(34, 34, 34, 0.661);
+        backdrop-filter: blur( 5px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-left: 1px solid rgba( 255, 255, 255, 0.18 );
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 70px;
+        z-index: 2;
+        transition: right ease-in-out .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .menu{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .tab-link{
+        margin-right: 20px;
+    }
+
+}
+@media only screen and (max-width: 600px){
+    header{
+        background-size: 150vmin;
+        background-position: right bottom;
+        background-position-x: 0%;
+    }
+    .header-text{
+        margin-top: 30%;
+        font-size: 20px;
+        text-shadow: 0px 0px 20px#111111;
+    }
+
+    .header-text h1{
+        font-size: 50px;
+        font-weight: 900;
+    }
+
+    .header-text h1 span{
+        font-weight: 900;
+        color: var(--primary-color);
+    }
+    .row{
+        gap: 0;
+    }
+
+}
+@media only screen and (max-width: 375px){
+    .header-text h1{
+        font-size: 28px;
+        font-weight: 900;
+    }
+}
