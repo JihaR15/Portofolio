@@ -31,7 +31,7 @@
 
     <header id="home">
         <div class="container">
-            <nav>
+            <nav id="navbar">
                 <a href="#">
                     <img src="img/Logo Putih.svg" class="logo">
                 </a>
@@ -130,6 +130,23 @@
     </sectioni>
 </body>
 
+<!-- buat navbar biar ilang kalo di scroll-->
+<script>
+    var prevScrollpos = window.pageYOffset;
+
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "20px";
+    } else {
+        document.getElementById("navbar").style.top = "-60px"; 
+    }
+
+    prevScrollpos = currentScrollPos;
+}
+
+</script>
 <script>
     var sidemenuvar = document.getElementById("sidemenu");
     
