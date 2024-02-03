@@ -8,6 +8,7 @@
 :root {
     --primary-color: skyblue;
     --secondary-color: #4d798b;
+    --secondary-color-lowopacity: #4d798b7d;
 }
 
 html{
@@ -25,9 +26,6 @@ body{
     background-position-x: 90%;
 }
 
-p{
-    font-size: 12px;
-}
 
 header{
     width: 100%;
@@ -225,6 +223,10 @@ nav ul li a:hover::after{
 
 .service-list div a{
     text-decoration: none;
+    background-color: #333333;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px;
     color: #fff;
     font-size: 12px;
     margin-top: 20px;
@@ -232,8 +234,12 @@ nav ul li a:hover::after{
 }
 
 .service-list div:hover{
-    background: var(--secondary-color);
+    background: var(--secondary-color-lowopacity);
     transform: translateY(-10px);
+}
+
+.service-list a:hover{
+    background-color: #222222;
 }
 
 /* Portfolio */
@@ -321,13 +327,84 @@ nav ul li a:hover::after{
     background-color: var(--secondary-color);
 }
 
+/* Contact */
+#contact{
+    background: rgba(34, 34, 34, 0.661);
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-left p{
+    margin-top: 20px;
+}
+
+.contact-left p i{
+    margin-right: 15px;
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+.social-icons a{
+    margin-top: 30px;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 30px;
+    color: #ababab;
+    transition: transform .3s;
+}
+
+.social-icons a:hover{
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+.btn.btn2{
+    display: inline-block;
+    background-color: var(--secondary-color);
+}
+
+.btn.btn2:hover{
+    color: var(--primary-color);
+    background-color: #4a4a4ab1;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    color: #fff;
+    background-color: #262626;
+    outline: none;
+    border: 0;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+
+form .btn2{
+    font-size: 15px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
 /* Responsive */
 nav .menu{
     display: none;
 }
 
-@media only screen and (max-width: 780px){
-    
+@media only screen and (max-width: 785px){
+    /* ganti nav jadi sidemenu */
     nav .menu{
         display: block;
         font-size: 25px;
@@ -359,6 +436,15 @@ nav .menu{
     }
     .tab-link{
         margin-right: 20px;
+    }
+
+    /* Contact */
+    .contact-left h1{
+        font-size: 40px;
+    }
+
+    .contact-left p{
+        font-size: 15px;
     }
 
 }
