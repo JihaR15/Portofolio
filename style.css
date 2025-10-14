@@ -19,7 +19,7 @@ body{
     background: #111111;
     color: #fff;
     background-attachment: fixed;
-    background-image: url(img/ryoyamada2.png);
+    background-image: url(img/jiha1.png);
     background-size: 100vmin;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -302,7 +302,20 @@ nav ul li a:hover::after{
     height: 60px;
     border-radius: 50%;
 }
+.work-img-wrapper {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.work-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .work:hover img{
     transform: scale(1.1);
 }
