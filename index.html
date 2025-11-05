@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,12 @@
 <script>
     var tablink = document.getElementsByClassName("tab-link");
     var tabcontent = document.getElementsByClassName("tab-content");
-    
-    function opentab(tabname){
-        for(tab_link of tablink){
+
+    function opentab(tabname) {
+        for (tab_link of tablink) {
             tab_link.classList.remove("active-link");
         }
-        for(tab_content of tabcontent){
+        for (tab_content of tabcontent) {
             tab_content.classList.remove("active-tab");
         }
         event.currentTarget.classList.add("active-link");
@@ -47,7 +48,71 @@
                 <i class="menu fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
-                <h4>Full Stack Developer & UI Designer Enthusiast</h4>
+                <h4 class="typing">
+                    <span id="typed-text"></span><span class="suffix"> Enthusiast</span>
+                    <!-- <span class="cursor">|</span> -->
+                </h4>
+
+                <style>
+                    .typing {
+                        display: inline-block;
+                        font-weight: 500;
+                    }
+
+                    .suffix {
+                        display: inline-block;
+                        font-weight: 500;
+                        margin-left: 6px;
+                    }
+
+                    .cursor {
+                        display: inline-block;
+                        margin-left: 6px;
+                        font-weight: 700;
+                    }
+
+                    @keyframes blink {
+                        50% {
+                            opacity: 0;
+                        }
+                    }
+
+                    .cursor {
+                        animation: blink 1s step-end infinite;
+                    }
+                </style>
+
+                <script>
+                    (function () {
+                        const words = ["Full Stack Developer", "UI/UX Designer", "Network Engineer"];
+                        const el = document.getElementById("typed-text");
+                        let w = 0, i = 0, deleting = false;
+                        const typeSpeed = 100, deleteSpeed = 50, delay = 1400;
+
+                        function tick() {
+                            const current = words[w];
+                            if (!deleting) {
+                                i++;
+                                el.textContent = current.slice(0, i);
+                                if (i === current.length) {
+                                    deleting = true;
+                                    setTimeout(tick, delay);
+                                    return;
+                                }
+                            } else {
+                                i--;
+                                el.textContent = current.slice(0, i);
+                                if (i === 0) {
+                                    deleting = false;
+                                    w = (w + 1) % words.length;
+                                }
+                            }
+                            setTimeout(tick, deleting ? deleteSpeed : typeSpeed);
+                        }
+
+                        document.addEventListener("DOMContentLoaded", tick);
+                    })();
+                </script>
                 <h1>Hi, I'm <span>Jiha</span> Ramdhan<br>from Another Side</h1>
             </div>
         </div>
@@ -64,8 +129,10 @@
                 <div class="about-col-2">
                     <h1 class="title">About Me</h1>
                     <p>
-                        Informatics Engineering student with skills in Java, Laravel, and Flutter, as well as some experience in graphic design and UI/UX.
-                        Has a background in IT Support and computer networking from vocational education, with abilities in hardware and software troubleshooting.
+                        Informatics Engineering student with skills in Java, Laravel, and Flutter, as well as some
+                        experience in graphic design and UI/UX.
+                        Has a background in IT Support and computer networking from vocational education, with abilities
+                        in hardware and software troubleshooting.
                         Ready to contribute and continue growing in the IT field.
                     </p>
 
@@ -76,22 +143,36 @@
                     </div>
                     <div class="tab-content active-tab" id="skills">
                         <ul>
-                            <li><span>IT Support</span><br>- Hardware and software troubleshooting. <br>- Basic knowledge of operating systems (Windows, Linux, etc.). <br>- Use of common software and applications, such as Microsoft Office Suite.</li>
-                            <li><span>Networking</span><br>- Basic understanding of computer networks, including LAN, Fiber Optic, TCP/IP protocols, DNS, DHCP.</li>
-                            <li><span>Graphic Designer</span> (especially 2D Illustrator)<br>- Basic understanding of computer networks, including LAN, Fiber Optic, TCP/IP protocols, DNS, DHCP.</li>
+                            <li><span>IT Support</span><br>- Hardware and software troubleshooting. <br>- Basic
+                                knowledge of operating systems (Windows, Linux, etc.). <br>- Use of common software and
+                                applications, such as Microsoft Office Suite.</li>
+                            <li><span>Networking</span><br>- Basic understanding of computer networks, including LAN,
+                                Fiber Optic, TCP/IP protocols, DNS, DHCP.</li>
+                            <li><span>Graphic Designer</span> (especially 2D Illustrator)<br>- Experienced in using Ibis
+                                Paint for drawing 2D characters.<br>- Uses Canva for simple presentation designs and
+                                Instagram feed layouts.</li>
+                            <li><span>Programming</span><br>- Basic knowledge of Java and PHP.<br>- Familiar with the
+                                Laravel framework for web development.<br>- Currently learning Flutter for
+                                cross-platform/mobile development.</li>
                         </ul>
                     </div>
                     <div class="tab-content" id="experience">
                         <ul>
-                            <li><span>PKL</span> (Praktik Kerja Lapangan)<br><i><strong>IT Support</strong>,</i> <strong>PT.NALE SYSTEM INTEGRATOR (Dec 2021 – Jan 2023)</strong><br>- Provide technical support to users in troubleshooting hardware problems and soft.<br>- Manage computer networks and ensure their availability and security.
-                            <br>- Handles installation, configuration, and maintenance of operating systems and applications.
-                        </li>
+                            <li><span>PKL</span> (Praktik Kerja Lapangan)<br><i><strong>IT Support</strong>,</i>
+                                <strong>PT.NALE SYSTEM INTEGRATOR (Dec 2021 – Jan 2023)</strong><br>- Provide technical
+                                support to users in troubleshooting hardware problems and soft.<br>- Manage computer
+                                networks and ensure their availability and security.
+                                <br>- Handles installation, configuration, and maintenance of operating systems and
+                                applications.
+                            </li>
                         </ul>
                     </div>
                     <div class="tab-content" id="education">
                         <ul>
-                            <li><span>SMK <i>Teknik Komputer dan Jaringan</i>, </span><br><strong>SMKN 1 KEPANJEN (Jul 2020 – May 2023)</strong></li>
-                            <li><span>D-IV <i>Teknik Informatika</i>, </span><br><strong>POLITEKNIK NEGERI MALANG (Jul 2023 – Now)</strong></li>
+                            <li><span>SMK <i>Teknik Komputer dan Jaringan</i>, </span><br><strong>SMKN 1 KEPANJEN (Jul
+                                    2020 – May 2023)</strong></li>
+                            <li><span>D-IV <i>Teknik Informatika</i>, </span><br><strong>POLITEKNIK NEGERI MALANG (Jul
+                                    2023 – Now)</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -108,7 +189,8 @@
                 <div>
                     <i class="fa-solid fa-bezier-curve"></i>
                     <h2>Graphic Design</h2>
-                    <p>Create graphic designs such as posters, logos, and 2D illustrations using applications like Adobe Illustrator and CorelDRAW.</p>
+                    <p>Create graphic designs such as posters, logos, and 2D illustrations using applications like Adobe
+                        Illustrator and CorelDRAW.</p>
                     <!-- <a href="belumjadi.html">Learn more</a> -->
                 </div>
                 <div>
@@ -120,13 +202,15 @@
                 <div>
                     <i class="fa-solid fa-laptop-code"></i>
                     <h2>IT Support</h2>
-                    <p>Provide technical assistance for hardware and software troubleshooting, operating system installation, and computer maintenance.</p>
+                    <p>Provide technical assistance for hardware and software troubleshooting, operating system
+                        installation, and computer maintenance.</p>
                     <!-- <a href="belumjadi.html">Learn more</a> -->
                 </div>
                 <div>
                     <i class="fa-solid fa-network-wired"></i>
                     <h2>Networking</h2>
-                    <p>Configure and maintain computer networks, including LAN, Fiber Optic, and manage TCP/IP, DNS, and DHCP protocols.</p>
+                    <p>Configure and maintain computer networks, including LAN, Fiber Optic, and manage TCP/IP, DNS, and
+                        DHCP protocols.</p>
                     <!-- <a href="belumjadi.html">Learn more</a> -->
                 </div>
                 <div>
@@ -153,10 +237,12 @@
                         <h3>SIMANTAP - Sistem Manajemen Tanggap Perbaikan</h3>
                         <p>Campus facility damage reporting web application built with Laravel & MySQL.</p>
                         <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                            <a href="https://simantap.dbsnetwork.my.id/" target="_blank" rel="noopener" title="Kunjungi SIMANTAP">
+                            <a href="https://simantap.dbsnetwork.my.id/" target="_blank" rel="noopener"
+                                title="Kunjungi SIMANTAP">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
-                            <a href="https://github.com/JihaR15/PBL_SIMANTAP" target="_blank" rel="noopener" title="GitHub Repository">
+                            <a href="https://github.com/JihaR15/PBL_SIMANTAP" target="_blank" rel="noopener"
+                                title="GitHub Repository">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
@@ -164,13 +250,14 @@
                 </div>
                 <div class="work">
                     <div class="work-img-wrapper">
-                        <img src="img/wrk1.gif" alt="POS AdminLTE Laravel">
+                        <img src="img/Project/pwlpos.png" alt="POS AdminLTE Laravel">
                     </div>
                     <div class="layer">
                         <h3>Point Of Sales (POS) - AdminLTE Laravel</h3>
                         <p>POS web application built with Laravel 10 and AdminLTE template.</p>
                         <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                            <a href="https://github.com/JihaR15/WEBLNJTLARAVEL10/tree/main/PWL_POS" target="_blank" rel="noopener" title="GitHub Repository">
+                            <a href="https://github.com/JihaR15/WEBLNJTLARAVEL10/tree/main/PWL_POS" target="_blank"
+                                rel="noopener" title="GitHub Repository">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
@@ -178,13 +265,14 @@
                 </div>
                 <div class="work">
                     <div class="work-img-wrapper">
-                        <img src="img/wrk2.gif" alt="Web PHP Tugas Akhir">
+                        <img src="img/Project/bebasta.png" alt="Web PHP Tugas Akhir">
                     </div>
                     <div class="layer">
                         <h3>Sistem Bebas Tanggungan Tugas Akhir</h3>
                         <p>Web application without framework, built with PHP for final project management.</p>
                         <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                            <a href="https://github.com/Lelytameyda29rpl/Sistem-Informasi-Bebas-Tanggungan-Tugas-Akhir" target="_blank" rel="noopener" title="GitHub Repository">
+                            <a href="https://github.com/Lelytameyda29rpl/Sistem-Informasi-Bebas-Tanggungan-Tugas-Akhir"
+                                target="_blank" rel="noopener" title="GitHub Repository">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
@@ -192,13 +280,14 @@
                 </div>
                 <div class="work">
                     <div class="work-img-wrapper">
-                        <img src="img/wrk3.gif" alt="Java Booking Hotel CMD">
+                        <img src="img/Project/booking java.png" alt="Java Booking Hotel CMD">
                     </div>
                     <div class="layer">
                         <h3>Hotel Booking Application (Java CMD)</h3>
                         <p>Hotel booking application built with Java, operated via command line interface.</p>
                         <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                            <a href="https://github.com/JihaR15/Sistem_Booking" target="_blank" rel="noopener" title="GitHub Repository">
+                            <a href="https://github.com/JihaR15/Sistem_Booking" target="_blank" rel="noopener"
+                                title="GitHub Repository">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
@@ -206,13 +295,14 @@
                 </div>
                 <div class="work">
                     <div class="work-img-wrapper">
-                        <img src="img/wrk3.gif" alt="Desain UI/UX Polinemart">
+                        <img src="img/Project/polinemart.png" alt="Desain UI/UX Polinemart">
                     </div>
                     <div class="layer">
-                        <h3>Desain UI/UX Polinemart</h3>
+                        <h3>Polinemart UI/UX Design</h3>
                         <p>User interface design for the Polinemart application.</p>
                         <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                            <a href="https://www.figma.com/proto/VW9g3g7zK6QCDVnQYfUysf/Polinemart?node-id=55-125&p=f&t=crlJF5hu9ME2WXll-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A608" target="_blank" rel="noopener" title="Figma Design">
+                            <a href="https://www.figma.com/proto/VW9g3g7zK6QCDVnQYfUysf/Polinemart?node-id=55-125&p=f&t=crlJF5hu9ME2WXll-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A608"
+                                target="_blank" rel="noopener" title="Figma Design">
                                 <i class="fa-brands fa-figma"></i>
                             </a>
                         </div>
@@ -220,13 +310,14 @@
                 </div>
                 <div class="work">
                     <div class="work-img-wrapper">
-                        <img src="img/wrk2.gif" alt="Desain UI/UX Refoodify">
+                        <img src="img/Project/refoodify.png" alt="Desain UI/UX Refoodify">
                     </div>
                     <div class="layer">
                         <h3>Refoodify UI/UX Design</h3>
                         <p>User interface design for the Refoodify application.</p>
                         <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                            <a href="https://www.figma.com/proto/lMBPhLwpToRMQMg34qLCGj/Design-Project?node-id=1584-13764&p=f&t=DrVC7z1ySPldTU5X-1&scaling=scale-down&content-scaling=fixed&page-id=109%3A41&starting-point-node-id=1584%3A13698" target="_blank" rel="noopener" title="Figma Design">
+                            <a href="https://www.figma.com/proto/lMBPhLwpToRMQMg34qLCGj/Design-Project?node-id=1584-13764&p=f&t=DrVC7z1ySPldTU5X-1&scaling=scale-down&content-scaling=fixed&page-id=109%3A41&starting-point-node-id=1584%3A13698"
+                                target="_blank" rel="noopener" title="Figma Design">
                                 <i class="fa-brands fa-figma"></i>
                             </a>
                         </div>
@@ -247,48 +338,60 @@
                     <p><i class="fa-solid fa-paper-plane"></i>jiharamdhan97@gmail.com</p>
                     <p><i class="fa-solid fa-phone"></i>085817304152</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/_dhan.ji_/" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/jiha.ramdhan.7/" target="_blank" rel="noopener" title="facebook"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://twitter.com/Jr101104" target="_blank" rel="noopener" title="twitter"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/jiha-ramdhan" target="_blank" rel="noopener" title="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/JihaR15" target="_blank" rel="noopener" title="github"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/_dhan.ji_/" target="_blank" rel="noopener"
+                            title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/jiha.ramdhan.7/" target="_blank" rel="noopener"
+                            title="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://twitter.com/Jr101104" target="_blank" rel="noopener" title="twitter"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/jiha-ramdhan" target="_blank" rel="noopener"
+                            title="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/JihaR15" target="_blank" rel="noopener" title="github"><i
+                                class="fa-brands fa-github"></i></a>
                     </div>
-                    <a href="https://drive.google.com/file/d/1yhwGpO6CrAf_1GhpcUEmSgCaibMXSAMR/view?usp=sharing" class="btn btn2" target="_blank" rel="noopener">Download CV</a>
+                    <a href="https://drive.google.com/file/d/1yhwGpO6CrAf_1GhpcUEmSgCaibMXSAMR/view?usp=sharing"
+                        class="btn btn2" target="_blank" rel="noopener">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form>
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" id="" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
+                    <form action="https://formspree.io/f/xgvpgoyq" method="POST">
+                        <label>
+                            Your email:
+                            <input type="email" name="email">
+                        </label>
+                        <label>
+                            Your message:
+                            <textarea name="message"></textarea>
+                        </label>
+                        <!-- your other form fields go here -->
+                        <button type="submit" class="btn btn2">Send</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    
+
 </body>
 
 <!-- buat navbar biar ilang kalo di scroll-->
 <script>
     var prevScrollpos = window.pageYOffset;
 
-    window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
 
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "20px";
-    } else {
-        document.getElementById("navbar").style.top = "-60px"; 
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "20px";
+        } else {
+            document.getElementById("navbar").style.top = "-60px";
+        }
+
+        prevScrollpos = currentScrollPos;
     }
-
-    prevScrollpos = currentScrollPos;
-}
 
 </script>
 <script>
     var sidemenuvar = document.getElementById("sidemenu");
-    
+
     function openmenu() {
         sidemenuvar.style.right = "0";
     }
