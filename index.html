@@ -29,8 +29,6 @@
 
 <body>
 
-    <!-- Header -->
-
     <header id="home">
         <div class="container">
             <nav id="navbar">
@@ -50,8 +48,7 @@
             <div class="header-text">
                 <h4 class="typing">
                     <span id="typed-text"></span><span class="suffix"> Enthusiast</span>
-                    <!-- <span class="cursor">|</span> -->
-                </h4>
+                    </h4>
 
                 <style>
                     .typing {
@@ -118,8 +115,6 @@
         </div>
     </header>
 
-    <!-- About -->
-
     <section id="about">
         <div class="container">
             <div class="row">
@@ -151,9 +146,8 @@
                             <li><span>Graphic Designer</span> (especially 2D Illustrator)<br>- Experienced in using Ibis
                                 Paint for drawing 2D characters.<br>- Uses Canva for simple presentation designs and
                                 Instagram feed layouts.</li>
-                            <li><span>Programming</span><br>- Basic knowledge of Java and PHP.<br>- Familiar with the
-                                Laravel framework for web development.<br>- Currently learning Flutter for
-                                cross-platform/mobile development.</li>
+                            <li><span>Programming</span><br>- Java, PHP, Laravel (Web Framework).<br>- Flutter (Mobile Development).<br>- 
+                                Currently learning <strong>Node.js, Next.js & React Native</strong> for Fullstack Development.</li>
                         </ul>
                     </div>
                     <div class="tab-content" id="experience">
@@ -180,8 +174,6 @@
         </div>
     </section>
 
-    <!-- Services -->
-
     <section id="services">
         <div class="container">
             <h1 class="title">My Service</h1>
@@ -190,45 +182,58 @@
                     <i class="fa-solid fa-bezier-curve"></i>
                     <h2>Graphic Design</h2>
                     <p>Create graphic designs such as posters, logos, and 2D illustrations using applications like Adobe
-                        Illustrator and CorelDRAW.</p>
-                    <!-- <a href="belumjadi.html">Learn more</a> -->
+                        Illustator and CorelDRAW.</p>
                 </div>
                 <div>
                     <i class="fa-solid fa-pen-nib"></i>
                     <h2>2D Character Design</h2>
                     <p>Draw and design 2D characters for illustration, branding, or digital content needs.</p>
-                    <!-- <a href="belumjadi.html">Learn more</a> -->
                 </div>
                 <div>
                     <i class="fa-solid fa-laptop-code"></i>
                     <h2>IT Support</h2>
                     <p>Provide technical assistance for hardware and software troubleshooting, operating system
                         installation, and computer maintenance.</p>
-                    <!-- <a href="belumjadi.html">Learn more</a> -->
                 </div>
                 <div>
                     <i class="fa-solid fa-network-wired"></i>
                     <h2>Networking</h2>
                     <p>Configure and maintain computer networks, including LAN, Fiber Optic, and manage TCP/IP, DNS, and
                         DHCP protocols.</p>
-                    <!-- <a href="belumjadi.html">Learn more</a> -->
                 </div>
                 <div>
                     <i class="fa-brands fa-java"></i>
                     <h2>Programming</h2>
-                    <p>Develop applications using Java, Laravel, and Flutter for web and mobile needs.</p>
-                    <!-- <a href="belumjadi.html">Learn more</a> -->
+                    <p>Develop applications using Java, Laravel, Flutter, and Next.js for web and mobile needs.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio -->
-
     <section id="portfolio">
         <div class="container">
             <h1 class="title">My Project</h1>
             <div class="work-list">
+                
+                <div class="work">
+                    <div class="work-img-wrapper">
+                        <img src="img/Project/toko_fullstack.png" alt="Integrated Inventory System">
+                    </div>
+                    <div class="layer">
+                        <h3>Integrated Inventory System</h3>
+                        <p>Fullstack learning project (Node.js, Next.js, React Native, MSSQL). Features CRUD, Auth, and Real-time stock monitoring.</p>
+                        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                            <!-- <a href="https://toko-jiha.vercel.app" target="_blank" rel="noopener"
+                                title="Visit Website">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a> -->
+                            <a href="https://github.com/JihaR15/belajar-fullstack" target="_blank" rel="noopener"
+                                title="GitHub Repository">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="work">
                     <div class="work-img-wrapper">
                         <img src="img/Project/dashboard_simantap.png" alt="SIMANTAP Web App">
@@ -324,11 +329,8 @@
                     </div>
                 </div>
             </div>
-            <!-- <a href="belumjadi.html" class="btn">See more</a> -->
-        </div>
+            </div>
     </section>
-
-    <!-- Contact -->
 
     <section id="contact">
         <div class="container">
@@ -362,7 +364,6 @@
                             Your message:
                             <textarea name="message"></textarea>
                         </label>
-                        <!-- your other form fields go here -->
                         <button type="submit" class="btn btn2">Send</button>
                     </form>
                 </div>
@@ -372,7 +373,6 @@
 
 </body>
 
-<!-- buat navbar biar ilang kalo di scroll-->
 <script>
     var prevScrollpos = window.pageYOffset;
 
